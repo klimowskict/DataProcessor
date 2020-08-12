@@ -60,33 +60,29 @@ namespace DataProcessor
 
             // Determine type of file
             string extension = Path.GetExtension(InputFilePath);
-            switch (extension)
-            {
-                case ".txt":
-                    ProcessTextFile(inProgressFilePath);
-                    break;
-                default:
-                    WriteLine($"{extension} is an unsupported file type.");
-                    break;
-            }
-
+            
             string completedDirectoryPath = Path.Combine(rootDirectoryPath, CompletedDirectoryName);
             Directory.CreateDirectory(completedDirectoryPath);
-
-            WriteLine($"Moving {inProgressFilePath} to {completedDirectoryPath}");            
 
             var completedFileName = 
                 $"{Path.GetFileNameWithoutExtension(InputFilePath)}-{Guid.NewGuid()}{extension}";            
 
             var completedFilePath = Path.Combine(completedDirectoryPath, completedFileName);
-
-            File.Move(inProgressFilePath, completedFilePath);
-        }
-
-        private void ProcessTextFile(string inProgressFilePath)
-        {
-            WriteLine($"Processing text file {inProgressFilePath}");
-            // Read in and process
+            
+            switch (extension)
+            {
+                case ".txt":
+                    var textProcessor = new TextFileProcessor(inProgressFilePath, completedFilePath);
+                    textProcessor.Process();
+                    break;
+                default:
+                    WriteLine($"{extension} is an unsupported file type.");
+                    break;
+            }
+            
+            WriteLine($"Completed processing {inProgressFilePath}");
+            WriteLine($"Deleting {inProgressFilePath}");
+            File.Delete(inProgressFilePath);
         }
     }
 }

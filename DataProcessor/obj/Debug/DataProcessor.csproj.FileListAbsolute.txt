@@ -1,0 +1,6 @@
+/Users/MacBookAir/RiderProjects/DataProcessor/DataProcessor/bin/Debug/DataProcessor.exe
+/Users/MacBookAir/RiderProjects/DataProcessor/DataProcessor/bin/Debug/DataProcessor.pdb
+/Users/MacBookAir/RiderProjects/DataProcessor/DataProcessor/obj/Debug/DataProcessor.csprojAssemblyReference.cache
+/Users/MacBookAir/RiderProjects/DataProcessor/DataProcessor/obj/Debug/DataProcessor.csproj.CoreCompileInputs.cache
+/Users/MacBookAir/RiderProjects/DataProcessor/DataProcessor/obj/Debug/DataProcessor.exe
+/Users/MacBookAir/RiderProjects/DataProcessor/DataProcessor/obj/Debug/DataProcessor.pdb

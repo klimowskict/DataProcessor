@@ -22,6 +22,7 @@ namespace DataProcessor
             byte largest = data.Max();
 
             byte[] newData = new byte[data.Length + 1];
+            
             Array.Copy(data, newData, data.Length);
             newData[newData.Length - 1] = largest;
             
